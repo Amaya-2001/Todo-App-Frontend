@@ -20,7 +20,7 @@ import PriorityLow from '../Assets/Assets/Priority-Low.svg'
 //styled component
 const TasksCard = styled(Card)({
     width: "656px",
-    height: "656px",
+    height: "756px",
     marginTop: "54px",
     display: 'flex',
     marginLeft: '54px',
@@ -43,8 +43,8 @@ const MarkAsDoneBtnStyle = {
 
 };
 
-export const Tasks = () => {
-    const [tasks, setTasks] = useState<ITask[]>([]);
+export const Tasks = ({ setTasks, tasks }: { setTasks: React.Dispatch<React.SetStateAction<ITask[]>>, tasks: ITask[] }) => {
+
     const [tablePage, settablePage] = useState(1);
     const tasksPerTablePage = 8;
 

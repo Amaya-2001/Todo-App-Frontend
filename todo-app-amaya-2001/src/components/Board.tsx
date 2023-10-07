@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Tasks from './Tasks';
 import ActivityFeed from './ActivityFeed';
 import TasksPriorities from './TasksPriorities';
+import { ITask } from '../../types/tasks';
 
 export const Board = () => {
+    const [tasks, setTasks] = useState<ITask[]>([]);
+    console.log('tasks :', tasks);
 
     return (
         <Grid container spacing={2}>
             {/* First Column */}
             <Grid item xs={6}>
                 <Box>
-                    <Tasks />
+                    <Tasks setTasks={setTasks} tasks={tasks} />
                 </Box>
             </Grid>
             {/* Second Column */}
@@ -22,7 +25,7 @@ export const Board = () => {
                     <ActivityFeed />
                 </Box>
                 <Box>
-                    <TasksPriorities />
+                    <TasksPriorities tasks={tasks} />
                 </Box>
 
             </Grid>
