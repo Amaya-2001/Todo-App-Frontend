@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { styled } from '@mui/system';
@@ -12,44 +12,51 @@ import Paper from '@mui/material/Paper';
 import { Typography } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { ITask } from '../../types/tasks';
 
-
-function createData(
-    name: string,
-    calories: number,
-    fat: number,
-    carbs: number,
-    protein: number,
-) {
-    return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-
+//styled component
+const TasksCard = styled(Card)({
+    width: "656px",
+    height: "632px",
+    marginTop: "54px",
+    display: 'flex',
+    marginLeft: '54px',
+    alignItems: 'flext-start',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+});
 
 export const Tasks = () => {
-    const TasksCard = styled(Card)({
-        width: "656px",
-        height: "532px",
-        marginTop: "54px",
-        display: 'flex',
-        marginLeft: '54px',
-        alignItems: 'flext-start',
-        justifyContent: 'space-between',
-        flexDirection: 'column',
-    });
+    const [tasks, setTasks] = useState<ITask[]>([]);
+    const [tablePage, settablePage] = useState(1);
+    const tasksPerTablePage = 8;
+
+    //get tasks from the backend
+    React.useEffect(() => {
+        fetch(`https://6363c8f68a3337d9a2e7d805.mockapi.io/api/to-do`).then(response => response.json()).then(data => {
+            setTasks(data);
+            console.log('Received the updated tasks:', data);
+        })
+            .catch(error => {
+                console.log('Error fetching tasks list:', error)
+            })
+
+    }, [])
+
+    //handle the page 
+    const handlePage = (event: React.ChangeEvent<unknown>, newPage: number) => {
+        settablePage(newPage);
+    };
+
+    //logic - to display number of tasks per-page
+    const startIndex = (tablePage - 1) * tasksPerTablePage;
+    const endIndex = startIndex + tasksPerTablePage;
+    const displayedTasks = tasks.slice(startIndex, endIndex);
 
     return (
         <TasksCard>
             <Box sx={{ minWidth: 275, flexGrow: 1 }}>
-                <Card sx={{ width: '656px', height: '532px' }} variant="outlined">
+                <Card sx={{ width: '100%', height: '100%' }} variant="outlined">
                     <Box>
                         <TableContainer component={Paper} sx={{ flexGrow: 1 }}>
                             <Table aria-label="simple table">
@@ -63,18 +70,18 @@ export const Tasks = () => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {rows.map((row) => (
+                                    {displayedTasks.map((task) => (
                                         <TableRow
-                                            key={row.name}
-                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                            key={task.id}
+                                            sx={{ '&:last-child td, &:last-child th': { border: 0 }, fontSize: '10px', }}
                                         >
-                                            <TableCell component="th" scope="row">
-                                                {row.name}
+                                            <TableCell component="th" scope="row" sx={{ fontSize: '10px' }}>
+
+                                                {task.priority}
                                             </TableCell>
-                                            <TableCell align="right">{row.calories}</TableCell>
-                                            <TableCell align="right">{row.fat}</TableCell>
-                                            <TableCell align="right">{row.carbs}</TableCell>
-                                            <TableCell align="right">{row.protein}</TableCell>
+                                            <TableCell align="right" sx={{ fontSize: '10px' }}>{task.todo}</TableCell>
+                                            <TableCell align="right" sx={{ fontSize: '10px' }}>{task.completed ? 'Done' : 'In-Progress'}</TableCell>
+                                            <TableCell align="right" sx={{ fontSize: '10px' }}>{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(new Date(task.createdAt))}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -86,15 +93,14 @@ export const Tasks = () => {
                     <Box sx={{
                         display: 'flex',
                         justifyContent: 'center',
-                        marginTop: '150px',
-                        marginBottom: '16px',
+                        marginTop: '20px',
+                        marginBottom: '20px',
                     }}>
                         <Stack spacing={2}>
-                            <Pagination count={3} variant="outlined" shape="rounded" />
+                            <Pagination count={3} page={tablePage} onChange={handlePage} variant="outlined" shape="rounded" />
+
                         </Stack>
                     </Box>
-
-
                 </Card>
             </Box>
         </TasksCard>
@@ -102,7 +108,5 @@ export const Tasks = () => {
     )
 
 }
-
-
 
 export default Tasks;
