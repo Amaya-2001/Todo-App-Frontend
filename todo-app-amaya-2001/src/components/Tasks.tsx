@@ -58,7 +58,7 @@ export const Tasks = () => {
             <Box sx={{ minWidth: 275, flexGrow: 1 }}>
                 <Card sx={{ width: '100%', height: '100%' }} variant="outlined">
                     <Box>
-                        <TableContainer component={Paper} sx={{ flexGrow: 1 }}>
+                        <TableContainer component={Paper} flex-grow={1}>
                             <Table aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
@@ -80,8 +80,19 @@ export const Tasks = () => {
                                                 {task.priority}
                                             </TableCell>
                                             <TableCell align="right" sx={{ fontSize: '10px' }}>{task.todo}</TableCell>
-                                            <TableCell align="right" sx={{ fontSize: '10px' }}>{task.completed ? 'Done' : 'In-Progress'}</TableCell>
-                                            <TableCell align="right" sx={{ fontSize: '10px' }}>{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(new Date(task.createdAt))}</TableCell>
+                                            <TableCell align="center">
+                                                <div style={{
+                                                    fontSize: '10px', color: task.completed ? '#219653' : '#F2C94C',
+                                                    backgroundColor: task.completed ? '#E8F5E9' : '#F2C94C1A',
+                                                    borderRadius: '16px',
+                                                    paddingTop: task.completed ? '2px' : '0',
+                                                }}>
+                                                    {task.completed ? 'Done' : 'In-Progress'}
+                                                </div>
+                                            </TableCell>
+                                            <TableCell align="right" sx={{ fontSize: '10px' }}>
+                                                {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(new Date(task.createdAt))}
+                                            </TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -98,7 +109,6 @@ export const Tasks = () => {
                     }}>
                         <Stack spacing={2}>
                             <Pagination count={3} page={tablePage} onChange={handlePage} variant="outlined" shape="rounded" />
-
                         </Stack>
                     </Box>
                 </Card>
