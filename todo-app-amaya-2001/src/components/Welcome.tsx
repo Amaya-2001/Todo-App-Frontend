@@ -12,9 +12,9 @@ export const Welcome = () => {
     const StyledCard = styled(Card)({
         width: "1120px",
         height: "120px",
-        marginLeft: "320px",
-        marginTop: "5px",
+        marginTop: "54px",
         display: 'flex',
+        marginLeft: '54px',
         alignItems: 'flext-start',
         justifyContent: 'space-between',
     });

@@ -9,25 +9,23 @@ import Card from '@mui/material/Card';
 import profile from "../Assets/Assets/Profile.svg";
 import Notifications from "../Assets/Assets/Notifications.svg";
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  alignItems: 'flex-start',
-  paddingTop: theme.spacing(1),
-  paddingBottom: theme.spacing(2),
-
-  // Override media queries injected by theme.mixins.toolbar
-  '@media all': {
-    minHeight: 128,
-  },
-}));
+const StyledNavbar = styled(Card)({
+  width: "1168px",
+  height: "80px",
+  marginLeft: "20px",
+  display: 'flex',
+  alignItems: 'flext-start',
+  justifyContent: 'space-between',
+});
 
 export const Navigation = () => {
 
 
   return (
     //Navigationbar
-    <StyledToolbar>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
-        <Card variant="outlined" sx={{ width: "1168px", height: "80px", marginLeft: "272px", display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <StyledNavbar>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <Card variant="outlined" sx={{ width: "1168px", height: "80px", display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ justifyContent: 'space-between', alignItems: 'flex-start', marginLeft: '24px' }}>
             <Typography
               variant="h6"
@@ -62,7 +60,7 @@ export const Navigation = () => {
           </Box>
         </Card>
       </Box>
-    </StyledToolbar>
+    </StyledNavbar>
 
   );
 }
