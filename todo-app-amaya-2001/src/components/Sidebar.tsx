@@ -1,10 +1,9 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
-import { Button, ButtonGroup, IconButton } from '@mui/material';
+import { Button } from '@mui/material';
 import DashboardImg from "../Assets/Assets/Dashboard.svg"
 
 
@@ -44,15 +43,11 @@ export const Sidebar = () => {
                     <Typography sx={{ fontSize: 24, fontWeight: "bold" }} color="#FFFFFF" gutterBottom>
                         Acmy Solutions
                     </Typography>
-
                 </Box>
                 <Box>
-
                     <Button sx={DashBtnStyle}>
                         <img src={DashboardImg} />Dashboard</Button>
-
                 </Box>
-
             </SideCard>
         </React.Fragment>
     );

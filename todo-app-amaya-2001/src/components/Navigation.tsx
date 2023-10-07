@@ -10,9 +10,9 @@ import profile from "../Assets/Assets/Profile.svg";
 import Notifications from "../Assets/Assets/Notifications.svg";
 
 const StyledNavbar = styled(Card)({
-  width: "1168px",
+  width: "1250px",
   height: "80px",
-  marginLeft: "20px",
+  top: '0',
   display: 'flex',
   alignItems: 'flext-start',
   justifyContent: 'space-between',
@@ -25,7 +25,7 @@ export const Navigation = () => {
     //Navigationbar
     <StyledNavbar>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <Card variant="outlined" sx={{ width: "1168px", height: "80px", display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Card variant="outlined" sx={{ width: "1250px", height: "80px", display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ justifyContent: 'space-between', alignItems: 'flex-start', marginLeft: '24px' }}>
             <Typography
               variant="h6"

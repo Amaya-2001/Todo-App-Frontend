@@ -25,7 +25,7 @@ const TasksPrioritiesStyled = styled(Card)({
 });
 
 export const TasksPriorities: React.FC<ChartProps> = ({ tasks }) => {
-    console.log('tasks :', tasks);
+
     const count = tasks.reduce((acc, task) => {
         acc[task.priority] = (acc[task.priority] || 0) + 1;
         return acc;

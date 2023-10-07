@@ -14,14 +14,16 @@ export const Dashboard = () => {
   });
 
   const SidebarStyle = styled(Box)({
-    flex: '0 0 auto', // Set Sidebar to not grow or shrink
-    width: '272px', // Set Sidebar width
+    flex: '0 0 auto',
+    width: '272px',
   });
 
   const ContentStyle = styled(Box)({
-    flex: '1', // Allow content to grow
-    padding: '16px', // Add some padding
-    width: '1168px',
+    flex: '1',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '2px',
+
   });
 
   return (

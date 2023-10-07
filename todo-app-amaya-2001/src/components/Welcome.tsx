@@ -8,29 +8,37 @@ import IconButton from '@mui/material/IconButton';
 import Vector from "../Assets/Assets/Vector.svg";
 import Close from "../Assets/Assets/Close.svg";
 
+
+
+const StyledCard = styled(Card)({
+    width: "1145px",
+    height: "110px",
+    marginTop: "24px",
+    padding: "25px",
+    display: 'flex',
+    marginLeft: '24px',
+    marginRight: '24px',
+    alignItems: 'flext-start',
+    justifyContent: 'space-between',
+});
+
+
+
 export const Welcome = () => {
-    const StyledCard = styled(Card)({
-        width: "1120px",
-        height: "120px",
-        marginTop: "54px",
-        display: 'flex',
-        marginLeft: '54px',
-        alignItems: 'flext-start',
-        justifyContent: 'space-between',
-    });
+
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
             <StyledCard variant="outlined">
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
-                    <Box sx={{ alignItems: 'center', marginLeft: '24px', marginTop: "5px" }}>
-                        <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                    <Box sx={{ alignItems: 'center', marginLeft: '2px', marginTop: "5px" }}>
+                        <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left' }} gutterBottom >
                             Welcome Back, John Doe
                         </Typography>
-                        <Typography variant="caption" display="block" color="#757575" gutterBottom>
+                        <Typography variant="caption" display="block" color="#757575" sx={{ textAlign: 'left' }} gutterBottom >
                             The end of the year is coming. Are you planning your performance interviews? You can do this super efficiently with Acmy.
                         </Typography>
-                        <Typography variant="caption" display="block" gutterBottom>
+                        <Typography variant="caption" display="block" sx={{ textAlign: 'left' }} gutterBottom>
                             <Link href="#" color="#BC006D">
                                 Look here for more information
                             </Link>
@@ -38,11 +46,14 @@ export const Welcome = () => {
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '24px' }}>
                         <img src={Vector} alt="Vector" />
-                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', marginTop: '5px', }}>
-                            <IconButton size="large" aria-label="display more actions" edge="end"  >
-                                <img src={Close} alt="Close" />
-                            </IconButton>
-                        </Box>
+
+
+                        <IconButton size="large" aria-label="display more actions" edge="end"  >
+                            <img src={Close} alt="Close" />
+                        </IconButton>
+
+
+
                     </Box>
                 </Box>
             </StyledCard>

@@ -9,7 +9,7 @@ import { ITask } from '../../types/tasks';
 
 export const Board = () => {
     const [tasks, setTasks] = useState<ITask[]>([]);
-    console.log('tasks :', tasks);
+
 
     return (
         <Grid container spacing={2}>
