@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import Card from '@mui/material/Card';
+import Board from './Board';
 
 export const Dashboard = () => {
   const DashStyle = styled(Card)({
@@ -32,6 +33,7 @@ export const Dashboard = () => {
       <ContentStyle>
         <Navigation />
         <Welcome />
+        <Board />
       </ContentStyle>
     </DashStyle>
   );
