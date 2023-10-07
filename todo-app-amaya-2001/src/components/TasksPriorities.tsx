@@ -23,10 +23,8 @@ export const TasksPriorities = () => {
             <Box sx={{ minWidth: 275 }}>
                 <Card sx={{ width: "440px", height: "2533px" }} variant="outlined"> <Typography sx={{ fontWeight: 'bold', textAlign: 'left', marginLeft: '20px', marginTop: '20px', marginBottom: '20px' }}>Tasks Priorities</Typography>
                     <Divider />
-
                 </Card>
             </Box>
-
         </TasksPrioritiesStyled>
     )
 
