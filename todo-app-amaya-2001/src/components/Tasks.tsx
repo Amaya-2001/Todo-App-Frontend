@@ -21,12 +21,13 @@ import PriorityLow from '../Assets/Assets/Priority-Low.svg'
 const TasksCard = styled(Card)({
     width: "656px",
     height: "756px",
-    marginTop: "54px",
+    marginTop: "24px",
+    padding: "25px",
     display: 'flex',
-    marginLeft: '54px',
+    marginLeft: '24px',
+    marginRight: '24px',
     alignItems: 'flext-start',
     justifyContent: 'space-between',
-    flexDirection: 'column',
 });
 const MarkAsDoneBtnStyle = {
     width: '100px',
@@ -84,7 +85,7 @@ export const Tasks = ({ setTasks, tasks }: { setTasks: React.Dispatch<React.SetS
     return (
         <TasksCard>
             <Box sx={{ minWidth: 275, flexGrow: 1 }}>
-                <Card sx={{ width: '100%', height: '100%' }} variant="outlined">
+                <Card variant="outlined">
                     <Box>
                         <TableContainer component={Paper} flex-gro={1}>
                             <Table aria-label="simple table">

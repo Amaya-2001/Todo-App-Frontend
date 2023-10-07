@@ -46,14 +46,9 @@ export const Welcome = () => {
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '24px' }}>
                         <img src={Vector} alt="Vector" />
-
-
                         <IconButton size="large" aria-label="display more actions" edge="end"  >
                             <img src={Close} alt="Close" />
                         </IconButton>
-
-
-
                     </Box>
                 </Box>
             </StyledCard>
