@@ -9,7 +9,7 @@ import Vector from "../Assets/Assets/Vector.svg";
 import Close from "../Assets/Assets/Close.svg";
 
 const StyledCard = styled(Card)({
-    width: "1145px",
+    width: "1185px",
     height: "150px",
     marginTop: "24px",
     padding: "25px",
@@ -31,7 +31,7 @@ export const Welcome = () => {
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
             <StyledCard variant="outlined">
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', height: '100%' }}>
-                    <Box sx={{ alignItems: 'center', marginLeft: '2px', marginTop: "5px" }}>
+                    <Box sx={{ alignItems: 'center', marginLeft: '2px', }}>
                         <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left' }} gutterBottom >
                             Welcome Back, John Doe
                         </Typography>
@@ -45,8 +45,9 @@ export const Welcome = () => {
                         </Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '24px' }}>
-                        <Box sx={{ marginLeft: '5px', marginBottom: '5px' }}>
-                            <img src={Vector} style={{ width: '100%', height: '150px' }} alt="Vector" />
+
+                        <Box sx={{ alignSelf: 'flex-start', marginRight: '16px' }}>
+                            <img src={Vector} style={{ alignContent: 'center' }} alt="Vector" />
                         </Box>
                         <CloseBtnContainer>
                             <IconButton><img src={Close} alt="Close" /></IconButton>

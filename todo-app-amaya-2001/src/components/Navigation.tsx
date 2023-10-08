@@ -27,8 +27,8 @@ const StyledNavbar = styled(Card)(({ theme }) => ({
 
 export const Navigation = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'))
-  console.log("isSmallScreen:", isSmallScreen);
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isTinyScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     //Navigationbar
@@ -36,13 +36,13 @@ export const Navigation = () => {
       <StyledNavbar>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
           <Card variant="outlined" sx={{
-            width: '100%', height: "80px", display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexGrow: 1,
+            width: '100%', height: "80px", display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: isSmallScreen ? 'column' : 'row',
           }}>
-            <Box sx={{ justifyContent: 'space-between', alignItems: 'flex-start', marginLeft: '24px' }}>
+            <Box sx={{ justifyContent: 'space-between', alignItems: 'flex-start', marginLeft: '24px', }}>
               <Typography
                 variant="h6"
                 component="div"
-                sx={{ flexGrow: 0, display: { xs: 'none', sm: 'block' } }}
+                sx={{ flexGrow: isSmallScreen ? 0 : 1, display: { sm: 'block' } }}
               >
                 Dashboard
               </Typography>

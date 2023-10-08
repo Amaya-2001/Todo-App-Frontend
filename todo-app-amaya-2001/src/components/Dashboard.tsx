@@ -2,10 +2,11 @@ import React from 'react';
 import Navigation from './Navigation';
 import Welcome from './Welcome';
 import Sidebar from './Sidebar';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 import Card from '@mui/material/Card';
 import Board from './Board';
+import { useState } from 'react';
 
 //styled
 const DashStyle = styled(Card)({
@@ -23,15 +24,23 @@ const ContentStyle = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
   padding: '2px',
-
 });
 
 export const Dashboard = () => {
+  let isSideBarOpen = true;
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+  isSmallScreen ? isSideBarOpen = false : isSideBarOpen = true;
+
   return (
     <DashStyle>
-      <SidebarStyle>
-        <Sidebar />
-      </SidebarStyle>
+      {isSideBarOpen ?
+        <SidebarStyle>
+          <Sidebar />
+        </SidebarStyle>
+        : ''
+      }
       <ContentStyle>
         <Navigation />
         <Welcome />

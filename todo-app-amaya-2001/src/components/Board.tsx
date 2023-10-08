@@ -13,7 +13,7 @@ export const Board = () => {
     return (
         <Grid container spacing={2}>
             {/* First Column */}
-            <Grid item xs={12} md={6}>
+            <Grid item sm={12} md={6}>
                 <Box>
                     <Tasks setTasks={setTasks} tasks={tasks} />
                 </Box>

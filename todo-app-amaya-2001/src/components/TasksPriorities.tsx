@@ -6,6 +6,7 @@ import { Typography } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { ITask } from '../../types/tasks';
 import { Doughnut } from 'react-chartjs-2';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, plugins } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -26,6 +27,9 @@ const TasksPrioritiesStyled = styled(Card)({
 });
 
 export const TasksPriorities: React.FC<ChartProps> = ({ tasks }) => {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
     const count = tasks.reduce((acc, task) => {
         acc[task.priority] = (acc[task.priority] || 0) + 1;
         return acc;
@@ -45,7 +49,7 @@ export const TasksPriorities: React.FC<ChartProps> = ({ tasks }) => {
 
     return (
         <TasksPrioritiesStyled>
-            <Box sx={{ minWidth: 275 }}>
+            <Box sx={{ minWidth: isSmallScreen ? '100%' : 275 }}>
                 <Card sx={{ width: "510px", height: "2533px" }} variant="outlined">
                     <Typography sx={{ fontWeight: 'bold', textAlign: 'left', marginLeft: '20px', marginTop: '20px', marginBottom: '20px' }}>
                         Tasks Priorities
