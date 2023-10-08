@@ -39,6 +39,23 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Installations
+
+[To start a new Create React App project with TypeScript, you can run:-](https://create-react-app.dev/docs/adding-typescript/)
+
+`npx create-react-app my-app --template typescript`
+
+[Add Material UI to my project](https://mui.com/material-ui/getting-started/installation/)
+
+`npm install @mui/material @emotion/react @emotion/styled`
+`npm install @mui/material @mui/styled-engine-sc styled-components`
+
+## Packages
+
+To implement the Doughnut chart, I used the below package.
+
+`npm install react-chartjs-2 chart.js`
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

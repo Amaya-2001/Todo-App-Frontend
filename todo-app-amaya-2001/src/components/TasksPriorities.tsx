@@ -54,7 +54,7 @@ export const TasksPriorities: React.FC<ChartProps> = ({ tasks }) => {
                     {/* donut chart for Task Priorities*/}
 
                     <div style={{ marginLeft: '30px' }}>
-                        <div style={{ alignContent: 'center', width: '300px', height: '300px', paddingLeft: '80px', paddingBottom: '604px' }}>
+                        <div style={{ alignContent: 'center', width: '400px', height: '400px', paddingLeft: '80px', paddingBottom: '604px' }}>
                             <Doughnut data={data} options={{ plugins: { legend: { position: 'right' } } }} height={900} width={800} />
                         </div>
                     </div>

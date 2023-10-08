@@ -8,11 +8,9 @@ import IconButton from '@mui/material/IconButton';
 import Vector from "../Assets/Assets/Vector.svg";
 import Close from "../Assets/Assets/Close.svg";
 
-
-
 const StyledCard = styled(Card)({
     width: "1145px",
-    height: "110px",
+    height: "150px",
     marginTop: "24px",
     padding: "25px",
     display: 'flex',
@@ -20,17 +18,19 @@ const StyledCard = styled(Card)({
     marginRight: '24px',
     alignItems: 'flext-start',
     justifyContent: 'space-between',
+    position: 'relative'
+});
+const CloseBtnContainer = styled('div')({
+    position: 'absolute',
+    top: '5px',
+    right: '5px',
 });
 
-
-
 export const Welcome = () => {
-
-
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
             <StyledCard variant="outlined">
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', height: '100%' }}>
                     <Box sx={{ alignItems: 'center', marginLeft: '2px', marginTop: "5px" }}>
                         <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left' }} gutterBottom >
                             Welcome Back, John Doe
@@ -45,10 +45,12 @@ export const Welcome = () => {
                         </Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '24px' }}>
-                        <img src={Vector} alt="Vector" />
-                        <IconButton size="large" aria-label="display more actions" edge="end"  >
-                            <img src={Close} alt="Close" />
-                        </IconButton>
+                        <Box sx={{ marginLeft: '5px', marginBottom: '5px' }}>
+                            <img src={Vector} style={{ width: '100%', height: '150px' }} alt="Vector" />
+                        </Box>
+                        <CloseBtnContainer>
+                            <IconButton><img src={Close} alt="Close" /></IconButton>
+                        </CloseBtnContainer>
                     </Box>
                 </Box>
             </StyledCard>

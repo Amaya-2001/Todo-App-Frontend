@@ -2,20 +2,24 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/system';
-import { Button } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import { Button, useMediaQuery } from '@mui/material';
 import DashboardImg from "../Assets/Assets/Dashboard.svg"
 
 //styled
-const SideCard = styled(Card)({
+const SideCard = styled(Card)(({ theme }) => ({
     display: 'flex-1',
-    width: '272px',
+    width: '100%',
     height: '1048px',
     alignItems: 'flex-start',
     backgroundColor: '#33074F',
     color: '#FFFFFF',
+    flexDirection: 'column',
+    [theme.breakpoints.up('md')]: {
+        flexDirection: 'row',
+    },
 
-});
+}));
 
 const AcmySolutionsStyle = {
     backgroundColor: '#EBE6ED1A',
@@ -52,6 +56,8 @@ const card = (
 );
 
 export const Sidebar = () => {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Box sx={{ minWidth: 275 }}>
             <Card variant="outlined">{card}</Card>
