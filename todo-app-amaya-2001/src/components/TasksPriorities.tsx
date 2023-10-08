@@ -7,25 +7,25 @@ import Divider from '@mui/material/Divider';
 import { ITask } from '../../types/tasks';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, plugins } from 'chart.js';
-
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface ChartProps {
     tasks: ITask[];
 }
+
+//styled
 const TasksPrioritiesStyled = styled(Card)({
-    width: "440px",
+    width: "510px",
     height: "353px",
     marginTop: "10px",
     display: 'flex',
-    marginLeft: '120px',
+    marginLeft: '74px',
     alignItems: 'flext-start',
     justifyContent: 'space-between',
     flexDirection: 'column',
 });
 
 export const TasksPriorities: React.FC<ChartProps> = ({ tasks }) => {
-
     const count = tasks.reduce((acc, task) => {
         acc[task.priority] = (acc[task.priority] || 0) + 1;
         return acc;
@@ -46,7 +46,7 @@ export const TasksPriorities: React.FC<ChartProps> = ({ tasks }) => {
     return (
         <TasksPrioritiesStyled>
             <Box sx={{ minWidth: 275 }}>
-                <Card sx={{ width: "440px", height: "2533px" }} variant="outlined">
+                <Card sx={{ width: "510px", height: "2533px" }} variant="outlined">
                     <Typography sx={{ fontWeight: 'bold', textAlign: 'left', marginLeft: '20px', marginTop: '20px', marginBottom: '20px' }}>
                         Tasks Priorities
                     </Typography>

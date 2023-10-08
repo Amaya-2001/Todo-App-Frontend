@@ -7,31 +7,31 @@ import { styled } from '@mui/system';
 import Card from '@mui/material/Card';
 import Board from './Board';
 
+//styled
+const DashStyle = styled(Card)({
+  display: 'flex',
+  width: '100%',
+});
+
+const SidebarStyle = styled(Box)({
+  flex: '0 0 auto',
+  width: '272px',
+});
+
+const ContentStyle = styled(Box)({
+  flex: '1',
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '2px',
+
+});
+
 export const Dashboard = () => {
-  const DashStyle = styled(Card)({
-    display: 'flex',
-    width: '100%',
-  });
-
-  const SidebarStyle = styled(Box)({
-    flex: '0 0 auto',
-    width: '272px',
-  });
-
-  const ContentStyle = styled(Box)({
-    flex: '1',
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '2px',
-
-  });
-
   return (
     <DashStyle>
       <SidebarStyle>
         <Sidebar />
       </SidebarStyle>
-
       <ContentStyle>
         <Navigation />
         <Welcome />

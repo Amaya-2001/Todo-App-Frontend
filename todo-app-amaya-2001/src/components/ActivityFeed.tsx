@@ -7,23 +7,23 @@ import Divider from '@mui/material/Divider';
 import Avatar2 from "../Assets/Assets/Avatar-2.svg"
 import Avatar1 from "../Assets/Assets/Avatar-1.svg"
 
+//styled
+const ActivityCard = styled(Card)({
+    width: "510px",
+    height: "363px",
+    marginTop: "24px",
+    display: 'flex',
+    marginLeft: '74px',
+    alignItems: 'flext-start',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+});
 
 export const ActivityFeed = () => {
-    const ActivityCard = styled(Card)({
-        width: "440px",
-        height: "363px",
-        marginTop: "54px",
-        display: 'flex',
-        marginLeft: '120px',
-        alignItems: 'flext-start',
-        justifyContent: 'space-between',
-        flexDirection: 'column',
-    });
-
     return (
         <ActivityCard>
             <Box sx={{ minWidth: 275 }}>
-                <Card sx={{ width: "440px", height: "363px" }} variant="outlined"> <Typography sx={{ fontWeight: 'bold', textAlign: 'left', marginLeft: '20px', marginTop: '20px', marginBottom: '20px' }}>Activity Feed</Typography>
+                <Card sx={{ width: "510px", height: "363px" }} variant="outlined"> <Typography sx={{ fontWeight: 'bold', textAlign: 'left', marginLeft: '20px', marginTop: '20px', marginBottom: '20px' }}>Activity Feed</Typography>
                     <Divider />
 
                     {/* Activity-1 */}
@@ -63,7 +63,6 @@ export const ActivityFeed = () => {
                     </Box>
                 </Card>
             </Box>
-
         </ActivityCard>
     )
 

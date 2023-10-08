@@ -8,7 +8,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { Button, Typography } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
@@ -20,7 +19,7 @@ import PriorityLow from '../Assets/Assets/Priority-Low.svg'
 //styled component
 const TasksCard = styled(Card)({
     width: "656px",
-    height: "720px",
+    height: "726px",
     marginTop: "24px",
     display: 'flex',
     marginLeft: '24px',
@@ -71,9 +70,6 @@ export const Tasks = ({ setTasks, tasks }: { setTasks: React.Dispatch<React.SetS
             task.id === taskId ? { ...task, completed: true } : task
         );
         setTasks(updatedTasks);
-
-
-
     }
 
     //logic - to display number of tasks per-page
@@ -84,9 +80,9 @@ export const Tasks = ({ setTasks, tasks }: { setTasks: React.Dispatch<React.SetS
     return (
         <TasksCard>
             <Box sx={{ minWidth: 275, flexGrow: 1 }}>
-                <Card sx={{ width: '656px', height: '720px', display: 'flex', flexDirection: 'column' }} variant="outlined">
+                <Card sx={{ width: '656px', height: '726px', display: 'flex', flexDirection: 'column' }} variant="outlined">
                     <Box sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <TableContainer sx={{ flex: 1, width: '656px', height: '720px' }}>
+                        <TableContainer sx={{ flex: 1, width: '656px', height: '726px' }}>
                             <Table aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
