@@ -11,7 +11,7 @@ export const Sidebar = () => {
     const SideCard = styled(Card)({
         display: 'flex-1',
         width: '272px',
-        height: '900px',
+        height: '1088px',
         alignItems: 'flex-start',
         backgroundColor: '#33074F',
         color: '#FFFFFF',

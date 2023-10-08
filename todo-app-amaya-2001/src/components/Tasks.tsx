@@ -20,9 +20,8 @@ import PriorityLow from '../Assets/Assets/Priority-Low.svg'
 //styled component
 const TasksCard = styled(Card)({
     width: "656px",
-    height: "756px",
+    height: "720px",
     marginTop: "24px",
-    padding: "25px",
     display: 'flex',
     marginLeft: '24px',
     marginRight: '24px',
@@ -32,11 +31,11 @@ const TasksCard = styled(Card)({
 const MarkAsDoneBtnStyle = {
     width: '100px',
     height: '15px',
-    marginTop: '0',  // Adjusted margin for better positioning
-    borderRadius: '15px',  // Adjusted border radius for a smaller button
+    marginTop: '0',
+    borderRadius: '15px',
     textTransform: 'capitalize',
     color: '#BC006D',
-    fontSize: '10px',  // Font
+    fontSize: '10px',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'space-between'
@@ -85,9 +84,9 @@ export const Tasks = ({ setTasks, tasks }: { setTasks: React.Dispatch<React.SetS
     return (
         <TasksCard>
             <Box sx={{ minWidth: 275, flexGrow: 1 }}>
-                <Card variant="outlined">
-                    <Box>
-                        <TableContainer component={Paper} flex-gro={1}>
+                <Card sx={{ width: '656px', height: '720px', display: 'flex', flexDirection: 'column' }} variant="outlined">
+                    <Box sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <TableContainer sx={{ flex: 1, width: '656px', height: '720px' }}>
                             <Table aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
